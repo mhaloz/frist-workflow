@@ -8,4 +8,10 @@ jobs:
       - id: ip
         uses: haythem/public-ip@v1.3
       - name: Hola mundo
-				run : echo ¡Hola Mundo desde ${{ steps.ip.outputs.ipv4 }}! #bash
+	run : echo ¡Hola Mundo desde ${{ steps.ip.outputs.ipv4 }}! #bash
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Run index
+        run: node index.js
