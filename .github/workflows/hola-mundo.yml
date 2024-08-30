@@ -1,17 +1,14 @@
-name: Aprendiendo GitActions
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+name: Aprendiendo Github Actions
+run-name: Estoy aprendiendo Github Actions!!!
+on: [push]
 jobs:
   hola-mundo:
     runs-on: ubuntu-latest
     steps:
-    - name Checkout
-      uses: actions/checkout@v3
-    - name: Definir variables
-      run: echo "USERNAME=${{ github.actor }}" >> $GITHUB_ENV
-    - name: Correr script
-      run: python hola-mundo.py
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Definir variable
+        run: echo "USERNAME=${{ github.actor }}" >> $GITHUB_ENV
+      - name: Correr script
+        run: python main.py
     
